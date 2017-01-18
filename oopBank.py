@@ -1,7 +1,5 @@
 class BankAccount:
-    """
-    Parent class of bank account specifies main operations, withdraw and deposit
-    """
+   
     def __init__(self):
         pass
     def withdraw(self):
@@ -11,7 +9,8 @@ class BankAccount:
 
 class CurrentAccount(BankAccount):
     """
-    Minimum balance is zero
+    Inheritance. The parent class is BankAccount. 
+    CurrentAccount is the child class.
     """
     def __init__(self):
         BankAccount.__init__(self)
@@ -44,7 +43,12 @@ class SavingsAccount(BankAccount):
     """
     def __init__(self):
         BankAccount.__init__(self)
-        self.balance = 500
+        
+        self._balance = 500
+        '''
+        Encapsulation here is achieved by making self.balance=500 to be a protected member.
+        '''
+        
         self.amount = 0
     
     def deposit(self, amount):
